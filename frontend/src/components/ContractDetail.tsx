@@ -166,7 +166,7 @@ export default function ContractDetail({ contractId, onBack }: ContractDetailPro
             </div>
             <div>
               <span className="text-sm text-gray-500">Government Contract</span>
-              <p className="font-medium text-gray-900">{contract.government === 'Y' ? 'Yes' : 'No'}</p>
+              <p className="font-medium text-gray-900">{contract.government}</p>
             </div>
             <div>
               <span className="text-sm text-gray-500">Status</span>
