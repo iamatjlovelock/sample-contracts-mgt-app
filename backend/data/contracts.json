@@ -1,0 +1,114 @@
+{
+  "contracts": [
+    {
+      "id": "CTR-001",
+      "name": "Cloud Infrastructure Services Agreement",
+      "description": "Multi-year cloud infrastructure and managed services agreement",
+      "client": "Acme Corporation",
+      "narrative": "This Agreement governs the provision of cloud infrastructure services including compute, storage, and networking resources. The Provider shall maintain 99.9% uptime SLA and provide 24/7 technical support. Annual reviews shall be conducted to assess performance metrics and adjust capacity requirements. The agreement includes disaster recovery provisions and data sovereignty compliance for US-based operations.",
+      "region": "US",
+      "size": "XL",
+      "government": "N",
+      "status": "Active"
+    },
+    {
+      "id": "CTR-002",
+      "name": "Legal Consultation Retainer",
+      "description": "Ongoing legal advisory services for corporate matters",
+      "client": "TechStart Inc",
+      "narrative": "This retainer agreement provides for ongoing legal consultation services covering corporate governance, intellectual property matters, and regulatory compliance. Services include monthly advisory sessions, document review, and emergency consultation availability. The firm agrees to maintain appropriate professional liability insurance and conflict checks.",
+      "region": "US",
+      "size": "M",
+      "government": "N",
+      "status": "Active"
+    },
+    {
+      "id": "CTR-003",
+      "name": "Government IT Modernization Contract",
+      "description": "Federal IT systems modernization and migration project",
+      "client": "Department of Commerce",
+      "narrative": "This contract covers the modernization of legacy IT systems including migration to cloud-based infrastructure, implementation of zero-trust security architecture, and deployment of modern DevSecOps practices. All work shall comply with FedRAMP High requirements and NIST 800-53 controls. The contractor shall maintain appropriate security clearances for all personnel.",
+      "region": "US",
+      "size": "XXL",
+      "government": "Y",
+      "status": "Active"
+    },
+    {
+      "id": "CTR-004",
+      "name": "European Data Processing Agreement",
+      "description": "GDPR-compliant data processing services",
+      "client": "EuroFinance GmbH",
+      "narrative": "This Data Processing Agreement establishes the terms under which personal data of EU residents shall be processed. The processor commits to implementing appropriate technical and organizational measures as required under GDPR Article 32. Data shall not be transferred outside the EEA without appropriate safeguards. Annual audits shall verify compliance with all applicable data protection requirements.",
+      "region": "EUR",
+      "size": "L",
+      "government": "N",
+      "status": "Active"
+    },
+    {
+      "id": "CTR-005",
+      "name": "Canadian Healthcare IT Services",
+      "description": "Healthcare information systems support and maintenance",
+      "client": "Ontario Health Network",
+      "narrative": "This agreement provides for the support and maintenance of healthcare information systems including electronic health records, patient scheduling, and clinical decision support tools. All services shall comply with PIPEDA and provincial health information privacy requirements. The provider shall maintain HITRUST certification and conduct annual penetration testing.",
+      "region": "CAN",
+      "size": "L",
+      "government": "Y",
+      "status": "Active"
+    },
+    {
+      "id": "CTR-006",
+      "name": "UK Financial Services Compliance",
+      "description": "Regulatory compliance consulting for financial services",
+      "client": "London Capital Partners",
+      "narrative": "This engagement covers regulatory compliance consulting services for FCA-regulated activities. Services include regulatory change management, compliance monitoring program design, and regulatory reporting support. The consultant shall maintain appropriate FCA approvals and professional indemnity insurance.",
+      "region": "UK",
+      "size": "M",
+      "government": "N",
+      "status": "Active"
+    },
+    {
+      "id": "CTR-007",
+      "name": "Australia Mining Operations Support",
+      "description": "IT and operational technology support for mining operations",
+      "client": "Outback Resources Ltd",
+      "narrative": "This contract provides IT and OT support services for remote mining operations including satellite communications, SCADA systems maintenance, and fleet management technology. Services shall be available 24/7 with on-site response within 4 hours for critical issues. The provider shall comply with all WHS requirements for mining operations.",
+      "region": "AUS",
+      "size": "XL",
+      "government": "N",
+      "status": "Archived"
+    },
+    {
+      "id": "CTR-008",
+      "name": "Japan Manufacturing Systems Integration",
+      "description": "Factory automation and MES implementation",
+      "client": "Nippon Industries Co",
+      "narrative": "This agreement covers the implementation of manufacturing execution systems and factory automation technologies. The integration shall connect ERP systems with shop floor operations and enable real-time production monitoring. All documentation shall be provided in both English and Japanese. Training shall be provided to operations staff.",
+      "region": "JAP",
+      "size": "XL",
+      "government": "N",
+      "status": "Active"
+    },
+    {
+      "id": "CTR-009",
+      "name": "India BPO Services Agreement",
+      "description": "Business process outsourcing for customer support",
+      "client": "GlobalTech Solutions",
+      "narrative": "This BPO agreement covers customer support services including voice, email, and chat channels. The provider shall maintain service levels of 80% calls answered within 20 seconds and first-call resolution rate of 75%. Quality monitoring shall include call recording and regular calibration sessions. The provider shall comply with Indian labor laws and maintain appropriate data security certifications.",
+      "region": "IND",
+      "size": "L",
+      "government": "N",
+      "status": "Active"
+    },
+    {
+      "id": "CTR-010",
+      "name": "Small Business Advisory Services",
+      "description": "Monthly consulting for startup operations",
+      "client": "Fresh Ventures LLC",
+      "narrative": "This advisory agreement provides monthly consulting services covering business strategy, operational efficiency, and growth planning. Sessions shall be conducted virtually with quarterly in-person reviews. The advisor shall provide written recommendations following each session.",
+      "region": "US",
+      "size": "S",
+      "government": "N",
+      "status": "Active"
+    }
+  ]
+}
