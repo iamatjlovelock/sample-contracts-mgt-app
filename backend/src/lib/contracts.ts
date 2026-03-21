@@ -19,6 +19,7 @@ export interface ContractSummary {
   client: string;
   region: string;
   size: string;
+  government: string;
   status: string;
 }
 
@@ -60,6 +61,7 @@ export function searchContractsByClient(clientName: string): ContractSummary[] {
       client: c.client,
       region: c.region,
       size: c.size,
+      government: c.government,
       status: c.status,
     }));
 }
@@ -74,6 +76,7 @@ export function getAllContracts(): ContractSummary[] {
     client: c.client,
     region: c.region,
     size: c.size,
+    government: c.government,
     status: c.status,
   }));
 }

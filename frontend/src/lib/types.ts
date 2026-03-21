@@ -14,6 +14,7 @@ export interface ContractSummary {
   client: string;
   region: string;
   size: string;
+  government: string;
   status: string;
 }
 
