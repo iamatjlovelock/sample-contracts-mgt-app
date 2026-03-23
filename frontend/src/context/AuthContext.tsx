@@ -25,7 +25,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchUserInfo = useCallback(async (token: string) => {
+  const fetchUserInfo = useCallback(async (token: string, groups: string[] = []) => {
     try {
       // Fetch user attributes from Cognito (includes custom:user_type)
       const attributes = await fetchUserAttributes();
@@ -48,7 +48,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       if (response.ok) {
         const userInfo = await response.json();
-        setUser(userInfo);
+        setUser({ ...userInfo, groups });
         setAccessToken(token);
         return true;
       } else {
@@ -70,9 +70,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         await getCurrentUser();
         const session = await fetchAuthSession();
         const token = session.tokens?.accessToken?.toString();
+        const idToken = session.tokens?.idToken;
+        const groups = (idToken?.payload?.['cognito:groups'] as string[]) || [];
 
         if (token) {
-          await fetchUserInfo(token);
+          await fetchUserInfo(token, groups);
         }
       } catch {
         // Not authenticated
@@ -94,9 +96,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (result.isSignedIn) {
         const session = await fetchAuthSession();
         const token = session.tokens?.accessToken?.toString();
+        const idToken = session.tokens?.idToken;
+        const groups = (idToken?.payload?.['cognito:groups'] as string[]) || [];
 
         if (token) {
-          const success = await fetchUserInfo(token);
+          const success = await fetchUserInfo(token, groups);
           setIsLoading(false);
           return success;
         }
@@ -113,9 +117,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         try {
           const session = await fetchAuthSession();
           const token = session.tokens?.accessToken?.toString();
+          const idToken = session.tokens?.idToken;
+          const groups = (idToken?.payload?.['cognito:groups'] as string[]) || [];
 
           if (token) {
-            const success = await fetchUserInfo(token);
+            const success = await fetchUserInfo(token, groups);
             setIsLoading(false);
             return success;
           }

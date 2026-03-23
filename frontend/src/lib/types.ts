@@ -6,6 +6,7 @@ export interface AuthUser {
   userType: string;
   scopes: ContractScope[];
   allowedActions: string[];
+  groups: string[];
 }
 
 export interface ContractSummary {

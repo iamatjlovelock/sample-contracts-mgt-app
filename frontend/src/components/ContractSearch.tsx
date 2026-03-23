@@ -85,8 +85,21 @@ export default function ContractSearch({ onSelectContract }: ContractSearchProps
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-6">
-        {/* User Permissions Info */}
-        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+        {/* User Info */}
+        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg space-y-2">
+          {user?.groups && user.groups.length > 0 && (
+            <p className="text-sm text-blue-800">
+              <span className="font-medium">Cognito Groups:</span>{' '}
+              {user.groups.map((group) => (
+                <span
+                  key={group}
+                  className="inline-block px-2 py-0.5 mx-1 bg-purple-200 text-purple-900 rounded text-xs"
+                >
+                  {group}
+                </span>
+              ))}
+            </p>
+          )}
           <p className="text-sm text-blue-800">
             <span className="font-medium">Your permissions:</span>{' '}
             {user?.allowedActions.map((action) => (
