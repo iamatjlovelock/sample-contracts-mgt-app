@@ -51,9 +51,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(userInfo);
         setAccessToken(token);
         return true;
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Backend verify failed:', response.status, errorData);
+        setError(`Backend verification failed: ${errorData.error || response.statusText}`);
       }
     } catch (err) {
       console.error('Failed to fetch user info:', err);
+      setError(err instanceof Error ? err.message : 'Failed to connect to backend');
     }
     return false;
   }, []);
@@ -102,6 +107,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return false;
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Login failed';
+
+      // Handle "already authenticated" error by fetching existing session
+      if (errorMessage.includes('already') && errorMessage.toLowerCase().includes('sign')) {
+        try {
+          const session = await fetchAuthSession();
+          const token = session.tokens?.accessToken?.toString();
+
+          if (token) {
+            const success = await fetchUserInfo(token);
+            setIsLoading(false);
+            return success;
+          }
+        } catch {
+          // Session fetch failed, sign out and let user try again
+          await signOut();
+        }
+      }
+
       setError(errorMessage);
       setIsLoading(false);
       return false;
