@@ -45,8 +45,8 @@ Write-Host "Opening backend and frontend in new tabs..." -ForegroundColor Gray
 Write-Host "Close the tabs or press Ctrl+C in each to stop the servers." -ForegroundColor Gray
 Write-Host ""
 
-# Check if running in Windows Terminal
-if ($env:WT_SESSION) {
+# Check if Windows Terminal is available
+if (Get-Command wt -ErrorAction SilentlyContinue) {
     # Start backend in a new tab
     wt -w 0 nt --title "Backend" -d "$rootDir\backend" powershell -NoExit -Command "npm run dev"
 
@@ -55,7 +55,7 @@ if ($env:WT_SESSION) {
 
     Write-Host "Backend and frontend started in new tabs." -ForegroundColor Green
 } else {
-    Write-Host "Note: Not running in Windows Terminal. Falling back to separate windows." -ForegroundColor Yellow
+    Write-Host "Note: Windows Terminal not available. Falling back to separate windows." -ForegroundColor Yellow
 
     # Start backend in a new window
     $backendProcess = Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$rootDir\backend'; npm run dev" -PassThru
